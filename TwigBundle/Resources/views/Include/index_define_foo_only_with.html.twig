@@ -1,0 +1,11 @@
+{% set foo = "bar" %}
+
+{% include "@TgDemoTwig/Include/some_other_template.html.twig" with { foo: foo } only %}
+<hr/>
+{% include "@TgDemoTwig/Include/some_other_template.html.twig" with { foo: foo } only %}
+<hr/>
+{% include "@TgDemoTwig/Include/some_other_template.html.twig" with { foo: 'test' } only %}
+<hr/>
+{% include "@TgDemoTwig/Include/some_other_template.html.twig" ignore missing with { } only %}
+
+</body>

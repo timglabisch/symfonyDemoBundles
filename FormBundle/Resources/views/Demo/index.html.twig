@@ -1,6 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% form_theme form.some_select 'TgDemoFormBundle:Demo:Form/customer.html.twig' %}
+{% form_theme form 'TgDemoFormBundle:Demo:Form/customer.html.twig' 'TgDemoFormBundle:Demo:Form/foo.html.twig' %}
+
+
+
+{% block javascripts %}
+    foooo
+{% endblock %}
+
 
 {% block body %}
 
@@ -9,5 +16,4 @@
         {{ form_row(form.lastname) }}
         {{ form_row(form.some_select) }}
     {{ form_end(form) }}
-
 {% endblock %}

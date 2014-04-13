@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    some content!
+
+    {% embed "@TgDemoTwig/Embed/something_to_embed.html.twig" %}
+
+        {% block body %}
+            just overwrite it :P the parent: "{{ parent() }}"
+        {% endblock %}
+
+        {% block foo %}
+            this is just ignored
+        {% endblock %}
+
+    {% endembed %}
+
+{% endblock %}

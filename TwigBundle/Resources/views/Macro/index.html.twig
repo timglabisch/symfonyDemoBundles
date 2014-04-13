@@ -1,0 +1,23 @@
+{% macro button_small(label, url="#", route="", target="_self") %}
+    <div class="app_controller button">
+        <span><span>
+            {% set uri = url %}
+            {% if route is not empty %}
+                {% set uri = path(route) %}
+            {% endif %}
+
+            <a href="{{ uri }}">{{ label }}</a>
+        </span></span>
+    </div>
+{% endmacro %}
+
+
+{% import _self as this %}
+
+{{ this.button_small('hallo welt!') }}
+<hr/>
+{{ this.button_small('hallo welt!', null, 'foo_bar_route') }}
+<hr/>
+
+{% from _self import button_small as btn %}
+{{ btn('hallo welt!') }}

@@ -1,0 +1,9 @@
+i am included
+
+{% if foo is defined %}
+    and foo is defined ({{ foo }})
+    {# it is not possible to overwrite such scalar values. #}
+    {% set foo = foo ~ "." %}
+{% else %}
+    and foo is not defined
+{% endif %}
